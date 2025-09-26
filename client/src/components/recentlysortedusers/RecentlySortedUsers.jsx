@@ -7,7 +7,7 @@ export default function RecentlySortedUsers() {
     useEffect(() => {
         async function getQuizResultData() {
             try {
-                const response = await fetch("http://localhost:8080/quiz-result");
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/quiz-result`);
                 const data = await response.json();
                 setQuizResult(data);
             } catch (error) {

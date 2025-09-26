@@ -25,14 +25,14 @@ export default function Form() {
 
         try {
             //POST to add user
-            await fetch("http://localhost:8080/add-user", {
+            await fetch(`${import.meta.env.VITE_API_URL}/add-user`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ user_name: username }),
             });
 
             //GET the user to get the ID
-            const userResponse = await fetch(`http://localhost:8080/users/${username}`);
+            const userResponse = await fetch(`${import.meta.env.VITE_API_URL}/users/${username}`);
             const userData = await userResponse.json();
             const user_id = userData[0].id;
 
@@ -56,7 +56,7 @@ export default function Form() {
             const sorting_house = getTopHouse(tally);
 
             //POST quiz result
-            await fetch("http://localhost:8080/add-quiz-result", {
+            await fetch(`${import.meta.env.VITE_API_URL}/add-quiz-result`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ sorting_house, user_id }),

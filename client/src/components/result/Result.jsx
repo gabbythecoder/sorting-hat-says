@@ -1,4 +1,5 @@
 import houseDescriptions from "../../lib/houseDescriptions";
+import "./Result.css";
 
 export default function Result({ house }) {
     const info = house ? houseDescriptions[house.toLowerCase()] : undefined;
