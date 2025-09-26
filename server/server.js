@@ -34,7 +34,7 @@ app.get("/users/:username", async (request, response) => {
 //read data from my quiz_result and user table using JOIN 
 app.get("/quiz-result", async (request, response) => {
     try {
-        const data = await db.query(`SELECT quiz_result.sorting_house, users.id, users.user_name FROM users JOIN quiz_result ON users.id = quiz_result.user_id;`);
+        const data = await db.query(`SELECT quiz_result.sorting_house, users.id, users.user_name FROM users JOIN quiz_result ON users.id = quiz_result.user_id ORDER BY quiz_result.created_at DESC;`);
         response.json(data.rows);
     } catch (error) {
         console.error("Error in GET /quiz-result:", error);
