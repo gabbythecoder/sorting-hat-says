@@ -22,12 +22,12 @@ export default function RecentlySortedUsers() {
 
     return (
         <>
-            <div>
-                <h3>Recently Sorted Users</h3>
+            <div className="sorted-users-container">
+                <h3 className="sorted-users-title">Recently Sorted Users</h3>
                 <div className="user-cards-container">
                     {quizResult.map((user, index) => (
                         <div className={`user-cards ${user.sorting_house}`} key={`${user.user_name}-${index}`}>
-                            <p>{user.user_name}</p>
+                            <p className="user-cards-name">{user.user_name}</p>
                             <p>{user.sorting_house.charAt(0).toUpperCase() + user.sorting_house.slice(1)}</p>
                         </div>
                     ))}
