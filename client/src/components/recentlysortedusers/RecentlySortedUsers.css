@@ -1,41 +1,96 @@
+.sorted-users-container {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.sorted-users-title {
+    font-family: "Caesar Dressing", sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.15rem;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 .user-cards-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     border: 2px solid #111;
     border-radius: 12px;
-    max-height: 320px;
+    max-height: 400px;
     width: 100%;
-    max-width: 350px;
+    max-width: 500px;
     margin: 1rem auto;
     overflow-y: auto;
-    background-color: #2a2a2a;
+    background-color: rgba(20, 20, 40, 0.85);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    padding: 0.5rem;
 }
 
 .user-cards {
     border: 2px solid #111;
     padding: 1rem;
-    width: 150px;
+    width: 200px;
     margin: 0.4rem auto;
     border-radius: 12px;
     text-align: center;
+    font-weight: bold;
     color: #111;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.user-cards:hover {
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
 }
 
 .user-cards.gryffindor {
     border-color: #ae0001;
-    background-color: #fbe8e7;
+    background-color: #f4c2c0;
+    box-shadow: 0 0 20px 5px rgba(174, 0, 1, 0.7);
 }
 
 .user-cards.slytherin {
     border-color: #2a623d;
-    background-color: #e8f5e9;
+    background-color: #c7e5d0;
+    box-shadow: 0 0 20px 5px rgba(42, 98, 61, 0.7);
 }
 
 .user-cards.hufflepuff {
     border-color: #ecb939;
-    background-color: #fff8dc;
+    background-color: #fbe8a6;
+    box-shadow: 0 0 20px 5px rgba(236, 185, 57, 0.6);
 }
 
 .user-cards.ravenclaw {
     border-color: #0e1a40;
-    background-color: #e3eaf2;
+    background-color: #b8c7e0;
+    box-shadow: 0 0 25px 7px rgba(50, 100, 180, 0.7);
+}
+
+.user-cards-name {
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* === custom scroll bar === */
+.user-cards-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.user-cards-container::-webkit-scrollbar-track {
+    background: rgba(20, 20, 40, 0,6);
+    border-radius: 8px;
+}
+
+.user-cards-container::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.8);
+    border-radius: 8px;
+    border: 2px solid rgba(20, 20, 40, 0.6);
+    cursor: pointer;
+}
+
+.user-cards-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 1); /* brighter on hover */
 }
