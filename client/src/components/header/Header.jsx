@@ -3,13 +3,13 @@ import "./Header.css";
 
 export default function Header() {
     return (
-        <header>
+        <header className="site-header" tabIndex="0">
             <div className="header-container">
-            <h1>Sorting Hat Says</h1>
+            <h1 className="header-title">Sorting Hat Says</h1>
 
-            <nav>
-                <Link to={"/"}>Home</Link>
-                <Link to={"/form"}>Quiz</Link>
+            <nav className="nav-bar">
+                <Link className="link" to={"/"}>Home</Link>
+                <Link className="link" to={"/form"}>Quiz</Link>
             </nav>
             </div>
         </header>
