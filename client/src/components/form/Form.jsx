@@ -1,6 +1,8 @@
 import quizQuestions from "../../lib/quizQuestions";
 import { useState } from "react";
 import "./Form.css";
+import Result from "../result/Result";
+import RecentlySortedUsers from "../recentlysortedusers/RecentlySortedUsers";
 
 export default function Form() {
     const [username, setUsername] = useState("");
@@ -102,11 +104,9 @@ export default function Form() {
                 <button type="submit">Submit</button>
             </form>
 
-            {result && (
-                <div>
-                    <p>Your Sorting House is: {result.toUpperCase()}</p>
-                </div>
-            )}
+            {result && <Result house={result}/>}
+
+            <RecentlySortedUsers />
 
         </div>
     )
