@@ -68,8 +68,15 @@ export default function Form() {
         }
     }
 
+    function handleRetake() {
+        setUsername("");
+        setAnswers({});
+        setResults(null);
+    }
+
     return (
         <div>
+            {!result && ( 
             <form onSubmit={handleSubmit}>
                 <label>
                     Your name:
@@ -103,8 +110,9 @@ export default function Form() {
 
                 <button type="submit">Submit</button>
             </form>
+            )}
 
-            {result && <Result house={result}/>}
+            {result && <Result house={result} onRetake={handleRetake} />}
 
             <RecentlySortedUsers />
 
