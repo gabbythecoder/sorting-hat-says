@@ -1,6 +1,6 @@
 .footer-container {
     background-color: #1a2238;
-    height: 4rem;
+    height: 4.4rem;
     width: 100%;
     color: #f5f5f5;
     border-top: 2px solid #2f3a52;
@@ -9,9 +9,38 @@
     justify-content: center;
     align-items: center;
     gap: 0.2rem;
+    padding: 0.4rem;
 }
 
-.footer-text {
+.footer-text, .footer-text-desktop, .footer-text-mobile {
     font-family: "Nunito Sans", sans-serif;
     font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-text-mobile {
+    display: none;
+}
+
+/* === media queries === */
+@media (max-width: 768px) {
+    .footer-text-desktop {
+        display: none;
+    }
+
+    .footer-text-mobile {
+        display: block;
+    }
+
+    .footer-text, .footer-text-mobile {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 350px) {
+    .footer-text, .footer-text-mobile {
+        font-size: 0.65rem;
+    }
+
 }
