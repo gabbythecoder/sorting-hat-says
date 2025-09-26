@@ -16,13 +16,28 @@ app.get("/", (request, response) => {
     response.json({ message: "Welcome to the server. GET comfy!" });
 });
 
+//read data from my users table 
+app.get("/users/:username", async (request, response) => {
+    try {
+        const username = request.params.username;
+        const data = await db.query(`SELECT id, user_name FROM users WHERE user_name = $1;`, [username]);
+        response.json(data.rows);
+        //testing 
+        // console.log(username);
+        // console.log(data);
+    } catch (error) {
+        console.error("Error in GET /users:", error);
+        response.status(500).json({ success: false });
+    }
+})
+
 //read data from my quiz_result and user table using JOIN 
 app.get("/quiz-result", async (request, response) => {
     try {
         const data = await db.query(`SELECT quiz_result.sorting_house, users.user_name FROM users JOIN quiz_result ON users.id = quiz_result.user_id;`);
         response.json(data.rows);
     } catch (error) {
-        console.error("Error in the quiz-result route", error);
+        console.error("Error in GET /quiz-result:", error);
         response.status(500).json({ success: false });
     };
 });
@@ -36,7 +51,7 @@ app.post("/add-user", (request, response) => {
         );
         response.status(200).json({ success: true }); 
     } catch (error) {
-        console.error("Error in the add-user route", error);
+        console.error("Error in POST /add-user:", error);
         response.status(500).json({ success: false });
     };
 });
@@ -53,7 +68,7 @@ app.post("/add-quiz-result", (request, response) => {
         );
         response.status(200).json({ success: true });
     } catch (error) {
-        console.error("Error in the add-quiz-result route", error);
+        console.error("Error in POST /add-quiz-result:", error);
         response.status(500).json({ success: false });
     };
 });
