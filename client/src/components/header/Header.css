@@ -4,13 +4,13 @@
     align-items: center;
     width: 100%;
     background-color: #1a2238;
-    height: 4rem;
+    height: 4.4rem;
     color: #f5f5f5;
     border-bottom: 2px solid #2f3a52;
 }
 
 .header-title {
-    font-family: "Caesar Dressing";
+    font-family: "Caesar Dressing", sans-serif;
     color: #d4af37;
     font-size: 2rem;
     margin-left: 1.5rem;
@@ -36,7 +36,7 @@
     color: #fff;
 }
 
-.link:focus {
+.link.active {
     background-color: #d4af37;
     color: #1a2238;
 }

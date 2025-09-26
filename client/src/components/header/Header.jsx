@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import "./Header.css";
 
 export default function Header() {
@@ -8,8 +8,8 @@ export default function Header() {
             <h1 className="header-title">Sorting Hat Says</h1>
 
             <nav className="nav-bar">
-                <Link className="link" to={"/"}>Home</Link>
-                <Link className="link" to={"/form"}>Quiz</Link>
+                <NavLink className={({ isActive }) => isActive ? "link active" : "link"} to={"/"}>Home</NavLink>
+                <NavLink className={({ isActive }) => isActive ? "link active" : "link"} to={"/form"}>Quiz</NavLink>
             </nav>
             </div>
         </header>
