@@ -21,6 +21,9 @@ Week 7 Assignment - Build a Database Driven Full-Stack React & Express App
 - 🏹 Create additional SQL queries to show filtered posts.
 
 ## Reflection
+This week, we were tasked with creating a full-stack application that can submit and retrieve data from a database using React and Express. While this is similar to the work we completed in week 4 and during the group project, the key difference for this assignment was the use of React for the front-end.
+
+For my project, I decided to create a Hogwarts-style personality quiz, where users can discover which house they belong to based on their responses to a series of questions. For the database, I chose to store only the quiz results rather than the full form data. With this approach, I anticipated a significant amount of logic would be required to calculate and store the results accurately. This is where I encountered the main challenges of the assignment, as implementing this logic proved more complex than I initially expected.
 
 ## Errors or Bugs
 
