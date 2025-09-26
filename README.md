@@ -26,6 +26,11 @@ This week, we were tasked with creating a full-stack application that can submit
 For my project, I decided to create a Hogwarts-style personality quiz, where users can discover which house they belong to based on their responses to a series of questions. For the database, I chose to store only the quiz results rather than the full form data. With this approach, I anticipated a significant amount of logic would be required to calculate and store the results accurately. This is where I encountered the main challenges of the assignment, as implementing this logic proved more complex than I initially expected.
 
 ## Errors or Bugs
+When I tested the dummy data in my database, everything worked fine. But after I built the form and tried submitting real responses, I noticed that the quiz_result table was receiving NULL values. The issue was that I had only set up the POST endpoint for quiz_result, so while the responses were being saved, the user_id was coming through as NULL because I hadn’t fetched it yet. Once I implemented fetching the user_id and included it in the request, the responses started saving correctly.
+
+<div align=center>
+<img src="./images/null-entry.png">
+</div>
 
 ## Resources 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
