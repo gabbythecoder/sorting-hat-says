@@ -46,7 +46,7 @@ const quizQuestions = [
             { text: "Phoenix - represents courage and rebirth", value: "gryffindor" },
             { text: "Hippogriff - values intelligence and respect", value: "ravenclaw" },
             { text: "Basilisk - powerful and feared", value: "slytherin" },
-            { text: "Brownie - kind, loyal and helpful", value: "hufflepuff" }
+            { text: "Bowtruckle - loyal, protective and caring", value: "hufflepuff" }
         ]
     },
     {
