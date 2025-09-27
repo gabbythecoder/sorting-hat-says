@@ -4,6 +4,14 @@ import "./RecentlySortedUsers.css";
 export default function RecentlySortedUsers() {
     const [quizResult, setQuizResult] = useState([]);
 
+    //house badge images for the recently sorted users
+    const houseBadge = {
+        gryffindor: "/gryffindor-badge.png",
+        slytherin: "/slytherin-badge.png",
+        hufflepuff: "/hufflepuff-badge.png",
+        ravenclaw: "/ravenclaw-badge.png"
+    };
+
     useEffect(() => {
         async function getQuizResultData() {
             try {
@@ -27,8 +35,17 @@ export default function RecentlySortedUsers() {
                 <div className="user-cards-container">
                     {quizResult.map((user, index) => (
                         <div className={`user-cards ${user.sorting_house}`} key={`${user.user_name}-${index}`}>
-                            <p className="user-cards-name">{user.user_name}</p>
-                            <p>{user.sorting_house.charAt(0).toUpperCase() + user.sorting_house.slice(1)}</p>
+                            <div className="user-cards-crest">
+                                <img 
+                                    src={houseBadge[user.sorting_house.toLowerCase()]}
+                                    alt={`${user.sorting_house} crest`}
+                                />
+                            </div>
+
+                            <div className="user-cards-info">
+                                <p className="user-cards-name">{user.user_name}</p>
+                                <p className="user-cards-house">{user.sorting_house.charAt(0).toUpperCase() + user.sorting_house.slice(1)}</p>
+                            </div>
                         </div>
                     ))}
                 </div>

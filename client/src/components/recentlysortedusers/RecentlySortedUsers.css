@@ -1,82 +1,95 @@
 .sorted-users-container {
-    margin: 1rem;
+    margin: 1rem auto;
     padding: 1rem;
+    max-width: 1000px;
+    border: 1px solid #f5f5f5;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .sorted-users-title {
-    font-family: "Caesar Dressing", sans-serif;
+    font-family: "Gill Sans", sans-serif;
     font-size: 1.7rem;
-    letter-spacing: 0.15rem;
-    color: #d4af37;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.6);
-    text-align: center;
+    text-align: left;
     margin-bottom: 1rem;
+    padding-left: 0.5rem;
 }
 
 .user-cards-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid #111;
-    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
     max-height: 400px;
-    width: 100%;
-    max-width: 500px;
-    margin: 1rem auto;
     overflow-y: auto;
-    background-color: rgba(20, 20, 40, 0.85);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     padding: 0.5rem;
 }
 
 .user-cards {
-    border: 2px solid #111;
-    padding: 1rem;
-    width: 200px;
-    margin: 0.4rem auto;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: bold;
-    color: #111;
-    font-family: "Nunito Sans", sans-serif;
-}
-
-.user-cards:hover {
-    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border: 1px solid #f5f5f5;
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    font-weight: 600;
+    height: 100px;
+    box-sizing: border-box;
 }
 
 .user-cards.gryffindor {
-    border-color: #ae0001;
-    background-color: #f4c2c0;
-    box-shadow: 0 0 20px 5px rgba(174, 0, 1, 0.7);
+    background-color: rgba(120, 20, 25, 0.5);
 }
 
 .user-cards.slytherin {
-    border-color: #2a623d;
-    background-color: #c7e5d0;
-    box-shadow: 0 0 20px 5px rgba(42, 98, 61, 0.7);
+    background-color: rgba(20, 60, 40, 0.5);
 }
 
 .user-cards.hufflepuff {
-    border-color: #ecb939;
-    background-color: #fbe8a6;
-    box-shadow: 0 0 20px 5px rgba(236, 185, 57, 0.6);
+    background-color: rgba(150, 120, 20, 0.5);
 }
 
 .user-cards.ravenclaw {
-    border-color: #0e1a40;
-    background-color: #b8c7e0;
-    box-shadow: 0 0 25px 7px rgba(50, 100, 180, 0.7);
+    background-color: rgba(30, 48, 80, 0.5);
+}
+
+.user-cards-crest {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-cards-crest img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: translateY(5px);
+}
+
+.user-cards-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    flex: 1;
+    line-height: 1.2;
 }
 
 .user-cards-name {
     font-weight: 600;
     font-style: italic;
+    margin-bottom: 0.3rem;
+}
+
+.user-cards-house {
+    font-weight: 400;
 }
 
 /* === custom scroll bar === */
 .user-cards-container::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 .user-cards-container::-webkit-scrollbar-track {
@@ -93,4 +106,32 @@
 
 .user-cards-container::-webkit-scrollbar-thumb:hover {
     background: rgba(212, 175, 55, 1); /* brighter on hover */
+}
+
+/* === media queries === */
+@media (max-width: 900px) {
+    .user-cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .user-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sorted-users-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-cards-container {
+        grid-template-columns: 1fr;
+        padding: 0 2rem;
+    }
+
+    .sorted-users-title {
+        font-size: 1.4rem;
+    }
 }

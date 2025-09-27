@@ -3,20 +3,41 @@ import "./Result.css";
 
 export default function Result({ house, onRetake }) {
     const info = house ? houseDescriptions[house.toLowerCase()] : undefined;
+    
+    const houseImages = {
+        gryffindor: "/gryffindor.png",
+        slytherin: "/slytherin.png",
+        hufflepuff: "/hufflepuff.png",
+        ravenclaw: "/ravenclaw.png"
+    };
+
+    const houseImageCrest = house ? houseImages[house.toLowerCase()] : null;
 
     return (
         <>
         {info ? ( 
             <div className="result-container">
-                <h2>You're in {info.name}!</h2>
-                <p>Traits: {info.traits}</p>
-                <p>{info.description}</p>
+                {houseImageCrest && (
+                    <img 
+                        src={houseImageCrest}
+                        alt={info.name}
+                        className="house-image"
+                    />
+                )}
 
-                <button onClick={onRetake} className="retake-button">Retake Quiz</button>
+                <div className="result-text-container">
+                <h2 className="result-congrats">Congratulations! You're in {info.name}!</h2>
+                <p className="result-text">Traits: {info.traits}</p>
+                <p className="result-text">{info.description}</p>
+                </div>
+
+                {/* <button onClick={onRetake} className="retake-button">Retake Quiz</button> */}
             </div>
             ) : (
                 <p>Oops! We couldn't determine your house.</p>
             )}
+
+            <button onClick={onRetake} className="retake-button">Retake Quiz</button>
         </>
     )
 }

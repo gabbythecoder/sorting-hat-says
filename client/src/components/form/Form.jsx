@@ -75,11 +75,14 @@ export default function Form() {
     }
 
     return (
-        <div>
+        <div className="quiz-page-container">
             {!result && ( 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} tabIndex="0">
+
+                {/* Name Card */}
+                <div className="form-card name-card">
                 <label>
-                    Your name:
+                    Enter Your Name:
                     <input 
                         type="text"
                         value={username}
@@ -87,28 +90,33 @@ export default function Form() {
                         required
                     />
                 </label>
+                </div>
 
+                {/* Question Cards */}
                 {quizQuestions.map((question, index) => (
-                    <div key={question.id}>
-                        <p>{question.question}</p>
-
-                        {question.options.map((option, optionIndex) => (
-                            <label key={optionIndex}>
-                                <input 
-                                    type="radio"
-                                    name={`question-${index}`}
-                                    value={option.value}
-                                    checked={answers[`question-${index}`] === option.value}
-                                    onChange={handleAnswerChange}
-                                    required
-                                />
-                                {option.text}
-                            </label> 
-                        ))}
+                    <div key={question.id} className="form-card question-card">
+                            <p className="question-text">{question.question}</p>
+                        <div className="options-container">
+                            {question.options.map((option, optionIndex) => (
+                                <label key={optionIndex} className="option-label">
+                                    <input 
+                                        type="radio"
+                                        name={`question-${index}`}
+                                        value={option.value}
+                                        checked={answers[`question-${index}`] === option.value}
+                                        onChange={handleAnswerChange}
+                                        required
+                                    />
+                                    {option.text}
+                                </label> 
+                            ))}
+                        </div>
                     </div>
                 ))}
 
-                <button type="submit">Submit</button>
+                <div className="submit-container">
+                    <button type="submit" className="submit-button">Submit</button>
+                </div>
             </form>
             )}
 
