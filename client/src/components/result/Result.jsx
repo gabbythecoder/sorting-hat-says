@@ -30,8 +30,6 @@ export default function Result({ house, onRetake }) {
                 <p className="result-text">Traits: {info.traits}</p>
                 <p className="result-text">{info.description}</p>
                 </div>
-
-                {/* <button onClick={onRetake} className="retake-button">Retake Quiz</button> */}
             </div>
             ) : (
                 <p>Oops! We couldn't determine your house.</p>

@@ -6,10 +6,10 @@ export default function RecentlySortedUsers() {
 
     //house badge images for the recently sorted users
     const houseBadge = {
-        gryffindor: "/gryffindor-badge.png",
-        slytherin: "/slytherin-badge.png",
-        hufflepuff: "/hufflepuff-badge.png",
-        ravenclaw: "/ravenclaw-badge.png"
+        gryffindor: "/images/gryffindor-badge.png",
+        slytherin: "/images/slytherin-badge.png",
+        hufflepuff: "/images/hufflepuff-badge.png",
+        ravenclaw: "/images/ravenclaw-badge.png"
     };
 
     useEffect(() => {

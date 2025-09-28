@@ -30,7 +30,6 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quiz" element={<Form />} />
-        
         </Routes>
         </main>
             <Footer />
