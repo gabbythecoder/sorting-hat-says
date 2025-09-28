@@ -31,7 +31,7 @@ export default function RecentlySortedUsers() {
     return (
         <>
             <div className="sorted-users-container">
-                <h3 className="sorted-users-title">Recently Sorted Users</h3>
+                <h3 className="sorted-users-title">Recently Sorted Students</h3>
                 <div className="user-cards-container">
                     {quizResult.map((user, index) => (
                         <div className={`user-cards ${user.sorting_house}`} key={`${user.user_name}-${index}`}>

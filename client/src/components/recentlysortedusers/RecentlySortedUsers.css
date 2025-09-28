@@ -9,7 +9,7 @@
 
 .sorted-users-title {
     font-family: "Cabin", sans-serif;
-    font-size: 1.7rem;
+    font-size: 1.1rem;
     text-align: left;
     margin-bottom: 1rem;
     padding-left: 0.5rem;
@@ -133,6 +133,6 @@
     }
 
     .sorted-users-title {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 }

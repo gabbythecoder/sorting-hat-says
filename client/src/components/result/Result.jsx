@@ -5,10 +5,10 @@ export default function Result({ house, onRetake }) {
     const info = house ? houseDescriptions[house.toLowerCase()] : undefined;
     
     const houseImages = {
-        gryffindor: "/gryffindor.png",
-        slytherin: "/slytherin.png",
-        hufflepuff: "/hufflepuff.png",
-        ravenclaw: "/ravenclaw.png"
+        gryffindor: "/images/gryffindor.png",
+        slytherin: "/images/slytherin.png",
+        hufflepuff: "/images/hufflepuff.png",
+        ravenclaw: "/images/ravenclaw.png"
     };
 
     const houseImageCrest = house ? houseImages[house.toLowerCase()] : null;
