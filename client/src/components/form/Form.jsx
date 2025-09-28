@@ -81,11 +81,14 @@ export default function Form() {
 
                 {/* Name Card */}
                 <div className="form-card name-card">
-                <label>
+                <label htmlFor="username">
                     Enter Your Name:
                     <input 
                         type="text"
+                        name="username"
+                        id="username"
                         value={username}
+                        placeholder="e.g. Harry"
                         onChange={(event) => setUsername(event.target.value)}
                         required
                     />
@@ -98,10 +101,11 @@ export default function Form() {
                             <p className="question-text">{question.question}</p>
                         <div className="options-container">
                             {question.options.map((option, optionIndex) => (
-                                <label key={optionIndex} className="option-label">
+                                <label key={optionIndex} className="option-label" htmlFor={`question-${index}-option-${optionIndex}`}>
                                     <input 
                                         type="radio"
                                         name={`question-${index}`}
+                                        id={`question-${index}-option-${optionIndex}`}
                                         value={option.value}
                                         checked={answers[`question-${index}`] === option.value}
                                         onChange={handleAnswerChange}
