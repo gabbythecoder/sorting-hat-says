@@ -10,7 +10,7 @@
 .sorted-users-title {
     font-family: "Cabin", sans-serif;
     font-size: 1.1rem;
-    text-align: left;
+    text-align: center;
     margin-bottom: 1rem;
     padding-left: 0.5rem;
 }
@@ -119,10 +119,6 @@
 @media (max-width: 768px) {
     .user-cards-container {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sorted-users-title {
-        text-align: center;
     }
 }
 
