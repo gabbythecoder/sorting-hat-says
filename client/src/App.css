@@ -30,6 +30,6 @@ body.background-home-page {
   background-image: url("/images/sorting-hat-on-a-counter.png");
 }
 
-body.background-quiz-page {
+body.background-quiz-page, body.background-not-found-page {
   background-image: url("/images/sorting-hat-on-a-counter-darkened.png");
 }

@@ -7,6 +7,7 @@ import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Form from "./components/form/Form";
 import Footer from "./components/footer/Footer";
+import NotFoundPage from "./components/notfound/NotFoundPage";
 
 export default function App() {
     const location = useLocation();
@@ -18,6 +19,8 @@ export default function App() {
             document.body.classList.add("background-home-page");
         } else if (location.pathname === "/quiz") {
             document.body.classList.add("background-quiz-page");
+        } else {
+            document.body.classList.add("background-not-found-page");
         }
     }, [location.pathname]);
 
@@ -30,6 +33,7 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quiz" element={<Form />} />
+            <Route path="*" element={<NotFoundPage />} />
         </Routes>
         </main>
             <Footer />
